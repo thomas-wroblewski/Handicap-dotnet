@@ -1,0 +1,27 @@
+﻿
+
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes: 
+      - postgres-data:/Users/twroblewski/RiderProjects/Handicap/data
+    environment: 
+      POSTGRES_USER: tom
+      POSTGRES_PASSWORD: c0r3
+      POSTGRES_DB: handicap
+    restart: always
+#    networks:
+#      default: aliases:db-local
+    
+  
+#  handicap:
+#    image: handicap
+#    build:
+#      context: .
+#      dockerfile: Handicap/Dockerfile
+volumes:
+  postgres-data: {}
+    
